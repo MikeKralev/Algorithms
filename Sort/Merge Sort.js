@@ -21,3 +21,13 @@ function merge(arr1, arr2) {
   }
   return result;
 }
+
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  return merge(
+    mergeSort(arr.slice(0, arr.length / 2)),
+    mergeSort(arr.slice(arr.length / 2)),
+  );
+}
