@@ -11,10 +11,13 @@ function merge(arr1, arr2) {
       index2++;
     }
   }
-  if (index1 < arr1.length) {
-    result.push(...arr1.slice(index1));
-  } else if (index2 < arr2.length) {
-    result.push(...arr2.slice(index2));
+  while (index1 < arr1.length) {
+    result.push(arr1[index1]);
+    index1++;
+  }
+  while (index2 < arr2.length) {
+    result.push(arr2[index2]);
+    index2++;
   }
   return result;
 }
