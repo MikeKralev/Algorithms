@@ -1,0 +1,15 @@
+function BFS(tree) {
+  const queue = [];
+  const visited = [];
+  queue.push(tree.root);
+  while (queue.length !== 0) {
+    if (queue[0].left) {
+      queue.push(queue[0].left);
+    }
+    if (queue[0].right) {
+      queue.push(queue[0].right);
+    }
+    visited.push(queue.shift());
+  }
+  return visited;
+}
